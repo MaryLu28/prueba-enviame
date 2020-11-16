@@ -1,0 +1,83 @@
+.container {
+  padding: 50px 50px;
+  background-color: #444444;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+
+  .title {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    background: #ec1d24;
+    font-family: "Marvel";
+    font-weight: normal;
+    margin: 0 auto;
+    width: 200px;
+    padding: 5px;
+    font-size: 40px;
+  }
+
+  @media (max-width: 425px) {
+    padding: 50px 25px;
+  }
+}
+
+.character {
+  width: calc((100% / 3) - 10px);
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 17px 0px black;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #444444;
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 50px;
+
+    @media (max-width: 425px) {
+      margin-right: 20px;
+    }
+  }
+
+  h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 26px;
+  }
+
+  p {
+    width: 100%;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  span {
+    width: 100%;
+    display: block;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  @media (max-width: 990px) {
+    width: calc(50% - 10px);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}

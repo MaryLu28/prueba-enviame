@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Marvel";
+  font-style: normal;
+  font-weight: normal;
+  src: local("marvel"), url("/assets/font/Marvel.ttf") format("truetype");
+}
