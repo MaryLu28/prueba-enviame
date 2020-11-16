@@ -23,6 +23,8 @@ export class AppComponent {
   constructor(private readonly http: HttpClient) {}
   characters: Character[];
   offset: number = 0;
+  character: '';
+
   ngOnInit() {
     this.getCharacters(this.offset).subscribe((data) => {
       this.characters = data;
@@ -39,11 +41,34 @@ export class AppComponent {
       .pipe(map((data: any) => data.data.results));
   }
 
+  getCharacter(name) {
+    const base = 'https://gateway.marvel.com:443/v1/public/characters';
+    const apikey = 'c1df50d73cbd5dee60535d4cb03c7d9b';
+    const url = `${base}?apikey=${apikey}&name=${name}`;
+
+    return this.http
+      .get<Character[]>(url)
+      .pipe(map((data: any) => data.data.results));
+  }
+
   onScroll() {
     this.offset += 100;
     this.getCharacters(this.offset).subscribe((data) => {
       this.characters = this.characters.concat(data);
     });
     console.log(this.characters);
+  }
+
+  search() {
+    if (this.character == '') {
+      this.offset = 0;
+      this.getCharacters(this.offset).subscribe((data) => {
+        this.characters = data;
+      });
+    } else {
+      this.getCharacter(this.character).subscribe((data) => {
+        this.characters = data;
+      });
+    }
   }
 }

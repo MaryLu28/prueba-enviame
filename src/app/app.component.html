@@ -8,6 +8,18 @@
   <div class="title">
     <h1>MARVEL CHARACTERS</h1>
   </div>
+  <div class="search">
+    <input
+      type="text"
+      [(ngModel)]="character"
+      #ctrl="ngModel"
+      (keydown.enter)="search()"
+    />
+    <button (click)="search()">
+      <img src="../../assets/img/search.svg" alt="" />
+    </button>
+  </div>
+  <div></div>
   <div class="character" *ngFor="let character of characters">
     <img
       src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}"
