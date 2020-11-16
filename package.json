@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ejercicio1": "node scripts/exercise1.js"
+    "ejercicio1": "node scripts/exercise1.js",
+    "ejercicio2": "node scripts/exercise2.js"
   },
   "private": true,
   "dependencies": {
