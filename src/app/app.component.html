@@ -27,6 +27,6 @@
     />
     <h2>{{ character.name }}</h2>
     <p>{{ character.description }}</p>
-    <span><b>modified: </b>{{ character.modified }}</span>
+    <span><b>modified: </b>{{ character.modified | date: "dd-MM-yyyy" }}</span>
   </div>
 </div>
